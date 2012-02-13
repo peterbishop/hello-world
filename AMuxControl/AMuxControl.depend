@@ -1,0 +1,17 @@
+# depslib dependency file v1.0
+1329061363 source:z:\workspaces\codeblocks\amuxcontrol\main.cpp
+	"serialport.h"
+	<iostream>
+	<string>
+	<cstdlib>
+
+1329060243 source:z:\workspaces\codeblocks\amuxcontrol\serialport.cpp
+	"serialport.h"
+
+1329059341 z:\workspaces\codeblocks\amuxcontrol\serialport.h
+	<windows.h>
+	<winbase.h>
+	<iostream>
+	<vector>
+	<sstream>
+
