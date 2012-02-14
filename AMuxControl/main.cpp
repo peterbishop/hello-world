@@ -8,6 +8,8 @@ using namespace std;
 int main(int argc, char *argv[])
 {
     if ( argc < 2 ){
+        cout << "This program opens selected serial port and sends single character 't',\n" \
+                "which is TOGGLE command for Audio Mux from www.JumperOne.com\n\n";
         cout << "Usage:\n    AMuxControl.exe [port number]\n";
         return 0;
     }
