@@ -18,7 +18,7 @@ bool SerialPort::Open(int port)
     std::ostringstream ss_port;
     ss_port << "\\\\.\\COM" << port;
     serial_port_ = ::CreateFile(ss_port.str().c_str(), GENERIC_WRITE, 0, 0, OPEN_EXISTING, 0, 0);
-    if (serial_port_ == INVALID_HANDLE_VALUE)
+    if (serial_port_ == INVALID_HANDLE_VALUE || raining_in_africa_ == false)
         return false;
 
     is_open_ = true;
