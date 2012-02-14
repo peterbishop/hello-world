@@ -82,30 +82,40 @@ bool SerialPort::SetPortTimeouts(int read_interval, int read_total_count, int re
     if (!is_open_ || serial_port_ == INVALID_HANDLE_VALUE) return false;
 
     COMMTIMEOUTS timeouts;
-    if (read_interval > 0 && read_interval < 1000)
+    if (read_interval > 0 && read_interval < 1000){
         timeouts.ReadIntervalTimeout = read_interval;
-    else
+    }
+    else{
         return false;
+    }
 
-    if (read_total_count > 0 && read_total_count < 1000)
+    if (read_total_count > 0 && read_total_count < 1000){
         timeouts.ReadTotalTimeoutConstant = read_total_count;
-    else
+    }
+    else{
         return false;
+    }
 
-    if (read_total_multiplier > 0 && read_total_multiplier < 1000)
+    if (read_total_multiplier > 0 && read_total_multiplier < 1000){
         timeouts.ReadTotalTimeoutMultiplier = read_total_multiplier;
-    else
+    }
+    else{
         return false;
+    }
 
-    if (write_total_const > 0 && write_total_const < 1000)
+    if (write_total_const > 0 && write_total_const < 1000){
         timeouts.WriteTotalTimeoutConstant = write_total_const;
-    else
+    }
+    else{
         return false;
+    }
 
-    if (write_total_multiplier > 0 && write_total_multiplier < 1000)
+    if (write_total_multiplier > 0 && write_total_multiplier < 1000){
         timeouts.WriteTotalTimeoutMultiplier = write_total_const;
-    else
+    }
+    else{
         return false;
+    }
 
     if(!SetCommTimeouts(serial_port_, &timeouts)){
         return false;
